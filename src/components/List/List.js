@@ -11,11 +11,11 @@ const List = (props) => {
 			<p className={styles.description}>  </p>
 			<section className={styles.columns}>
 				
-				<Column title="Books" />
+				<Column icon={['fa fa-book']} title="Books" />
 			
-				<Column title="Movies" />
+				<Column icon={['fa fa-film']} title="Movies" />
 				
-				<Column title="Games" />
+				<Column  icon={['fa fa-gamepad']} title="Games" />
 			</section>
 		</div>
 	);
