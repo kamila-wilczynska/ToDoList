@@ -1,22 +1,37 @@
 import styles from './List.module.scss';
 import Column from "../Column/Column";
+import { useState } from 'react';
+//import { useEffect } from 'react';
+import shortid from 'shortid';
 
 
-const List = (props) => {
+const List = () => {
+	const [columns, setColumns] = useState([
+		{ id: 1, title: 'Books', icon: 'book' },
+		{ id: 2, title: 'Movies', icon: 'film' },
+		{ id: 3, title: 'Games', icon: 'gamepad' }
+	]);
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		setColumns([...columns, { id: shortid(), title: value }]);
+	}; 
+	const [value, setValue] = useState(''); //stan o startowej wartości pustego stringa.
+
 	return (
 		<div>
 			<header className={styles.header}>
 				<h2 className={styles.title}>Things to do<span className={styles.span}>soon</span></h2>
 			</header>
 			<p className={styles.description}>  </p>
+
 			<section className={styles.columns}>
-				
-				<Column icon={['fa fa-book']} title="Books" />
-			
-				<Column icon={['fa fa-film']} title="Movies" />
-				
-				<Column  icon={['fa fa-gamepad']} title="Games" />
+				{columns.map(column => <Column key={column.id} title={column.title} icon={column.icon} />)}
 			</section>
+			<form onSubmit={handleSubmit}>
+				<input type="text" value={value} onChange={e => setValue(e.target.value)} />
+				<button>Add column</button>
+			</form>
 		</div>
 	);
 };
