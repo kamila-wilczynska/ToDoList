@@ -1,0 +1,19 @@
+@import '../../styles/settings.scss';
+.columnForm {
+	padding: 10px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputBox {
+	padding: 20px;
+
+	
+}
+
+@media all and (max-width: 690px){
+    .columnForm {
+        flex-direction: column;
+    }
+}
