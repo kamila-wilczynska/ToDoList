@@ -74,11 +74,11 @@ const List = () => {
 						title={column.title}
 						icon={column.icon}
 						cards={column.cards}
-						addCard={column.addCard}
+						addCard={addCard}
 					/>)}
 
 			</section>
-			<ColumnForm action={addColumn} />
+			<ColumnForm action={addCard} />
 
 		</div>
 	);
