@@ -78,7 +78,7 @@ const List = () => {
 					/>)}
 
 			</section>
-			<ColumnForm action={addCard} />
+			<ColumnForm action={addColumn} />
 
 		</div>
 	);
