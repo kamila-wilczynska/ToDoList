@@ -3,36 +3,37 @@ import { useState } from 'react';
 import Button from "../Button/Button";
 import { useDispatch } from 'react-redux';
 //import {shortId} from 'react-redux;'
+import { addColumn } from "../../redux/store";
+import TextInput from "../TextInput/TextInput";
 
 
 
-const ColumnForm = props => {
-
+const ColumnForm = ({ listId }) => {
+	const [title, setTitle] = useState("");
+	const [icon, setIcon] = useState("");
+  
 	const dispatch = useDispatch();
-
-	const [title, setTitle] = useState('');
-	const [icon, setIcon] = useState('');
-
-	const handleSubmit = e => {
-		e.preventDefault();
-		dispatch({ type: 'ADD_COLUMN', newColumn: { title, icon } });
-		setTitle('');
-		setIcon('');
-	 };
-
+  
+	const handleSubmit = (e) => {
+	  e.preventDefault();
+	  dispatch(addColumn({ title, icon, listId }));
+	  setTitle("");
+	  setIcon("");
+	};
 	return (
 		<form className={styles.columnForm} onSubmit={handleSubmit}>
-			<div className={styles.inputBox}>
-			Title: <input  type="text" value={title} onChange={e => setTitle(e.target.value)} />
-			</div>
-			<div className={styles.inputBox}>
-			Icon: <input type="text" value={icon} onChange={e => setIcon(e.target.value)} />
-			</div>
-			<div className={styles.inputBox}>
+		  Title:
+		  <div className={styles.padding}>
+			<TextInput value={title} onChange={(e) => setTitle(e.target.value)} />
+		  </div>
+		  Icon:{" "}
+		  <div className={styles.padding}>
+			<TextInput value={icon} onChange={(e) => setIcon(e.target.value)} />
+		  </div>
+		  <div className={styles.padding}>
 			<Button>Add column</Button>
-			</div >
-		</form >
-	);
-};
-
-export default ColumnForm;
+		  </div>
+		</form>
+	  );
+	};
+	export default ColumnForm;
