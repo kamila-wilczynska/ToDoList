@@ -12,11 +12,8 @@ export const getFilteredCards = ({ cards, searchString }, columnId) =>
 
   
   export const searchInputValue = (state) => state.searchString;
-  
 
-  export const updateSearchString = (payload) => ({  type: "UPDATE_SEARCHSTRING", 
-  payload 
-});
+
 
 export const getAllColumns = (state) => state.columns;
 
@@ -26,6 +23,9 @@ export const getAllColumns = (state) => state.columns;
 export const addColumn = (payload) => ({ type: 'ADD_COLUMN', payload });
 export const addCard = (payload) => ({ type: 'ADD_CARD', payload });
 //export const searchCards = (payload) => ({ type: 'SEARCH', payload });
+export const updateSearchString = (payload) => ({  type: "UPDATE_SEARCHSTRING", 
+payload 
+});// payload = data  type= name
 
 const reducer = (state, action) => {
 	switch (action.type) {
