@@ -15,11 +15,11 @@ import Container from "../Container/Container";
 					<li>
 					 <a href="/">Home</a>
 					</li>
-					<li>
-					 <a href="/favourite">Favourite</a>
-					</li>
 					<li> 
 					 <a href="/about">About</a>
+					</li>
+					<li>
+					 <a href="/favourite">Favourite</a>
 					</li>
 				  </ul>
 				</div>
