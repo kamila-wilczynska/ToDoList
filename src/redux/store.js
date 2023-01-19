@@ -17,6 +17,11 @@ export const getFilteredCards = ({ cards, searchString }, columnId) =>
 
 export const getAllColumns = (state) => state.columns;
 
+//Powinien on przyjąć w argumencie informację, jakiej listy (o jakim id)
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
+
+export const getColumnsByList = ({ columns }, listId) => columns.filter((column) => column.listId === listId);
+
 
 // actions
 
