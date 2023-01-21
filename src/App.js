@@ -16,7 +16,7 @@ const App = () => {
 	return (
 		<main>
 			<NavBar />
-			<Container>
+			
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
@@ -24,7 +24,7 @@ const App = () => {
 					<Route path="/list/:listId" element={<List />} />
 					<Route path='*' element={<NotFound />}/>
 				</Routes>
-			</Container>
+			
 		</main>
 	)
 };
